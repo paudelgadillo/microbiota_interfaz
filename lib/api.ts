@@ -53,6 +53,7 @@ export interface DatoGrafica {
   microbiota_score: number;
   tsne_x:           number;
   tsne_y:           number;
+  anomalia_texto?: string;
 }
 
 export async function predecir(datos: DatosPaciente): Promise<ResultadoPaciente> {
