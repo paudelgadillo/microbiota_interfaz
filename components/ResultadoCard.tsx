@@ -6,12 +6,6 @@ const colorPerfil: Record<string, string> = {
   'Riesgo / Disbiosis': 'bg-red-100    text-red-800',
 };
 
-const colorScore = (score: number) => {
-  if (score >= 65) return 'text-emerald-600';
-  if (score >= 40) return 'text-yellow-500';
-  return 'text-red-500';
-};
-
 export default function ResultadoCard({ r }: { r: ResultadoPaciente }) {
   return (
     <div className="bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3">
@@ -25,7 +19,7 @@ export default function ResultadoCard({ r }: { r: ResultadoPaciente }) {
       </div>
 
       <div className="flex items-end gap-2">
-        <span className={`text-4xl font-bold ${colorScore(r.microbiota_score)}`}>
+        <span className="text-4xl font-bold text-gray-900">
           {r.microbiota_score}
         </span>
         <span className="text-gray-400 text-sm mb-1">/ 100</span>
