@@ -1,11 +1,5 @@
 import { ResultadoPaciente } from '@/lib/api';
 
-const colorPerfil: Record<string, string> = {
-  'Saludable'        : 'bg-emerald-100 text-emerald-800',
-  'Promedio'         : 'bg-yellow-100  text-yellow-800',
-  'Riesgo / Disbiosis': 'bg-red-100    text-red-800',
-};
-
 export default function ResultadoCard({ r }: { r: ResultadoPaciente }) {
   return (
     <div className="bg-white rounded-2xl border border-gray-200 p-5 flex flex-col gap-3">
@@ -24,10 +18,6 @@ export default function ResultadoCard({ r }: { r: ResultadoPaciente }) {
         </span>
         <span className="text-gray-400 text-sm mb-1">/ 100</span>
       </div>
-
-      <span className={`text-xs font-medium px-2 py-1 rounded-full w-fit ${colorPerfil[r.perfil] || 'bg-gray-100 text-gray-700'}`}>
-        {r.perfil}
-      </span>
 
       <div className="grid grid-cols-2 gap-2 mt-1">
         {[
